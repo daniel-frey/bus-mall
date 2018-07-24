@@ -38,7 +38,7 @@ new Merchandise('Shark bite Sleeping Bag', 'img/shark.jpg');
 new Merchandise('Baby sweeper onesie', 'img/sweep.png');
 new Merchandise('Tauntaun(?) sleeping bag', 'img/tauntaun.jpg');
 new Merchandise('Canned unicorn meat(!)', 'img/unicorn.jpg');
-new Merchandise('Octopus tentacle thumb drive', 'img/usb.gif');
+new Merchandise('Octopus tentacle thumb drive', 'img/usb.jpg');
 new Merchandise('Everfull watering can', 'img/water-can.jpg');
 new Merchandise('Bad idea wine glass', 'img/wine-glass.jpg');
 
