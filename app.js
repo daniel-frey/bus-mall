@@ -1,5 +1,5 @@
 var allProducts = [];
-var choicesLeft = 26;
+var choicesLeft = 25;
 var imageLeft = document.getElementById('left');
 var imageCenter = document.getElementById('center');
 var imageRight = document.getElementById('right');
@@ -10,6 +10,8 @@ var allUsedPics = [];
 var productViewTotals = [];
 var productClickTotals = [];
 var allChoices = [];
+var displayedImages = [];
+
 
 function Merchandise(name, filepath) {
   this.name = name;
@@ -41,6 +43,7 @@ new Merchandise('Everfull watering can', 'img/water-can.jpg');
 new Merchandise('Bad idea wine glass', 'img/wine-glass.jpg');
 
 function randomProduct() {
+  displayedImages = [];
   if (choicesLeft === 1) {
     photoFrame.removeEventListener('click', randomProduct);
     photoFrame.textContent = '';
@@ -60,6 +63,8 @@ function randomProduct() {
     images[i].src = allProducts[productIndex].filepath;
     images[i].alt = allProducts[productIndex].name;
     images[i].title = allProducts[productIndex].name;
+    displayedImages[i] = allProducts[productIndex];
+    allProducts[productIndex].views += 1;
     if (lastSixPics.length === 7) {
       lastSixPics.shift();
     }
@@ -68,53 +73,64 @@ function randomProduct() {
 }
 
 function countClicksOne() {
-  allChoices.push(imageLeft.alt);
+  displayedImages[0].clicks += 1;
 }
 
 function countClicksTwo() {
-  allChoices.push(imageCenter.alt);
+  displayedImages[1].clicks += 1;
 }
 
 function countClicksThree() {
-  allChoices.push(imageRight.alt);
-}
-
-function countViews() {
-  for (var i = 0; i < allProducts.length; i++) {
-    var viewTotal = 0;
-    for (var j = 0; j < allUsedPics.length; j++) {
-      if (i === allUsedPics[j]) {
-        viewTotal++;
-      }
-    }
-    productViewTotals.push(viewTotal);
-  }
-}
-
-function countClicks() {
-  for (var i = 0; i < allProducts.length; i++) {
-    var clickTotal = 0;
-    for (var j = 0; j < allChoices.length; j++) {
-      if (allChoices[j] === allProducts[i].name) {
-        clickTotal++;
-      }
-    }
-    productClickTotals.push(clickTotal);
-  }
+  displayedImages[2].clicks += 1;
 }
 
 function render() {
-  countViews();
-  countClicks();
-  var h2El = document.getElementById('votes');
-  h2El.textContent = 'Final Vote Count is: ';
-  var listEl = document.getElementById('list');
-  for (var i = 0; i < allProducts.length; i++) {
-    var liEl = document.createElement('li');
-    liEl.textContent = productClickTotals[i] + ' vote(s) for the ' + allProducts[i].name;
-    listEl.appendChild(liEl);
+  var titles = []; 
+  var votes = []; 
+  for (var a = 0; a < allProducts.length; a++) { 
+  console.log(allProducts[a].name);
+  titles.push(allProducts[a].name); 
+  votes.push(allProducts[a].clicks); 
   }
-}
+var ctx = document.getElementById("myChart").getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: titles,
+        datasets: [{
+            label: '# of Votes',
+            data: votes,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    autoSkip: false
+                }
+            }]
+        }
+    }
+});}
+
 randomProduct();
 
 photoFrame.addEventListener('click', randomProduct);
