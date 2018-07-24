@@ -1,7 +1,7 @@
 'use strict';
 
 var allProducts = [];
-var clicksLeft = 26;
+var choicesLeft = 26;
 var imageOne = document.getElementById('one');
 var imageTwo = document.getElementById('two');
 var imageThree = document.getElementById('three');
@@ -43,7 +43,7 @@ new Merchandise('Everfull watering can', 'img/water-can.jpg');
 new Merchandise('Bad idea wine glass', 'img/wine-glass.jpg');
 
 function randomProduct() {
-  if (clicksLeft === 1) {
+  if (choicesLeft === 1) {
     photoFrame.removeEventListener('click', randomProduct);
     photoFrame.textContent = '';
     render();
@@ -66,7 +66,7 @@ function randomProduct() {
       lastSixPics.shift();
     }
   }
-  clicksLeft--;
+  choicesLeft--;
 }
 
 function countClicksOne() {
