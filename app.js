@@ -1,6 +1,3 @@
-'use strict';
-
-var productNames = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass']
 var allProducts = [];
 var choicesLeft = 26;
 var imageLeft = document.getElementById('left');
@@ -14,17 +11,34 @@ var productViewTotals = [];
 var productClickTotals = [];
 var allChoices = [];
 
-function Product(name) {
+function Merchandise(name, filepath) {
   this.name = name;
-  this.filepath = 'img/' + name + '.jpg';
+  this.filepath = filepath;
   this.clicks = 0;
   this.views = 0;
   allProducts.push(this);
 }
 
-for(var i=0; i < productNames.length; i++) {
-  new Product(productNames[i]);
-}
+new Merchandise('R2D2 suitcase', 'img/bag.jpg');
+new Merchandise('Banana slicer', 'img/banana.jpg');
+new Merchandise('iPad toilet paper roll holder', 'img/bathroom.jpg');
+new Merchandise('Open-toed rainboots', 'img/boots.jpg');
+new Merchandise('Complete breakfast machine', 'img/breakfast.jpg');
+new Merchandise('Meatball flavored bubblegum', 'img/bubblegum.jpg');
+new Merchandise('Strange chair', 'img/chair.jpg');
+new Merchandise('Cthulhu action figure', 'img/cthulhu.jpg');
+new Merchandise('Duck beak for dogs', 'img/dog-duck.jpg');
+new Merchandise('Freshly-slayed dragon meat', 'img/dragon.jpg');
+new Merchandise('Pen-top utensils', 'img/pen.jpg');
+new Merchandise('Swiffer booties for pets', 'img/pet-sweep.jpg');
+new Merchandise('Pizza-cutting scissors', 'img/scissors.jpg');
+new Merchandise('Shark bite Sleeping Bag', 'img/shark.jpg');
+new Merchandise('Baby sweeper onesie', 'img/sweep.png');
+new Merchandise('Tauntaun(?) sleeping bag', 'img/tauntaun.jpg');
+new Merchandise('Canned unicorn meat(!)', 'img/unicorn.jpg');
+new Merchandise('Octopus tentacle thumb drive', 'img/usb.jpg');
+new Merchandise('Everfull watering can', 'img/water-can.jpg');
+new Merchandise('Bad idea wine glass', 'img/wine-glass.jpg');
 
 function randomProduct() {
   if (choicesLeft === 1) {
