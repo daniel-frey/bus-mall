@@ -25,7 +25,7 @@ new Merchandise('R2D2 suitcase', 'img/bag.jpg');
 new Merchandise('Banana slicer', 'img/banana.jpg');
 new Merchandise('iPad toilet paper roll holder', 'img/bathroom.jpg');
 new Merchandise('Open-toed rainboots', 'img/boots.jpg');
-new Merchandise('All-in-one breakfast machine', 'img/breakfast.jpg');
+new Merchandise('Complete breakfast machine', 'img/breakfast.jpg');
 new Merchandise('Meatball-flavored bubblegum', 'img/bubblegum.jpg');
 new Merchandise('Strange chair', 'img/chair.jpg');
 new Merchandise('Cthulhu action figure', 'img/cthulhu.jpg');
