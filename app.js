@@ -2,7 +2,7 @@
 
 var productNames = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass']
 var allProducts = [];
-var choicesLeft = 26;
+var choicesLeft = 25;
 var imageLeft = document.getElementById('left');
 var imageCenter = document.getElementById('center');
 var imageRight = document.getElementById('right');
