@@ -25,22 +25,22 @@ new Merchandise('R2D2 suitcase', 'img/bag.jpg');
 new Merchandise('Banana slicer', 'img/banana.jpg');
 new Merchandise('iPad toilet paper roll holder', 'img/bathroom.jpg');
 new Merchandise('Open-toed rainboots', 'img/boots.jpg');
-new Merchandise('All-in-one breakfast happiness', 'img/breakfast.jpg');
+new Merchandise('All-in-one breakfast machine', 'img/breakfast.jpg');
 new Merchandise('Meatball-flavored bubblegum', 'img/bubblegum.jpg');
 new Merchandise('Strange chair', 'img/chair.jpg');
 new Merchandise('Cthulhu action figure', 'img/cthulhu.jpg');
 new Merchandise('Duck beak for dogs', 'img/dog-duck.jpg');
 new Merchandise('Freshly-slayed dragon meat', 'img/dragon.jpg');
 new Merchandise('Pen-top utensils', 'img/pen.jpg');
-new Merchandise('Sweeper booties for pets', 'img/pet-sweep.jpg');
+new Merchandise('Swiffer booties for pets', 'img/pet-sweep.jpg');
 new Merchandise('Pizza-cutting scissors', 'img/scissors.jpg');
 new Merchandise('Shark bite Sleeping Bag', 'img/shark.jpg');
 new Merchandise('Baby sweeper onesie', 'img/sweep.png');
 new Merchandise('Tauntaun(?) sleeping bag', 'img/tauntaun.jpg');
-new Merchandise('Canned unicorn meat', 'img/unicorn.jpg');
+new Merchandise('Canned unicorn meat(!)', 'img/unicorn.jpg');
 new Merchandise('Octopus tentacle thumb drive', 'img/usb.gif');
 new Merchandise('Everfull watering can', 'img/water-can.jpg');
-new Merchandise('Bad Idea wine glass', 'img/wine-glass.jpg');
+new Merchandise('Bad idea wine glass', 'img/wine-glass.jpg');
 
 function randomProduct() {
   if (clicksLeft === 1) {
