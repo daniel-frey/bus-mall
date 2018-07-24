@@ -33,7 +33,7 @@ new Merchandise('Pen-top utensils', 'img/pen.jpg');
 new Merchandise('Swiffer booties for pets', 'img/pet-sweep.jpg');
 new Merchandise('Pizza-cutting scissors', 'img/scissors.jpg');
 new Merchandise('Shark bite Sleeping Bag', 'img/shark.jpg');
-new Merchandise('Baby sweeper onesie', 'img/sweep.png');
+new Merchandise('Baby sweeper onesie', 'img/sweep.jpg');
 new Merchandise('Tauntaun(?) sleeping bag', 'img/tauntaun.jpg');
 new Merchandise('Canned unicorn meat(!)', 'img/unicorn.jpg');
 new Merchandise('Octopus tentacle thumb drive', 'img/usb.jpg');
