@@ -2,11 +2,11 @@
 
 var allProducts = [];
 var choicesLeft = 26;
-var imageOne = document.getElementById('one');
-var imageTwo = document.getElementById('two');
-var imageThree = document.getElementById('three');
+var imageLeft = document.getElementById('left');
+var imageCenter = document.getElementById('center');
+var imageRight = document.getElementById('right');
 var photoFrame = document.getElementById('photo-frame');
-var images = [imageOne, imageTwo, imageThree];
+var images = [imageLeft, imageCenter, imageRight];
 var lastSixPics = [];
 var allUsedPics = [];
 var productViewTotals = [];
@@ -70,15 +70,15 @@ function randomProduct() {
 }
 
 function countClicksOne() {
-  allChoices.push(imageOne.alt);
+  allChoices.push(imageLeft.alt);
 }
 
 function countClicksTwo() {
-  allChoices.push(imageTwo.alt);
+  allChoices.push(imageCenter.alt);
 }
 
 function countClicksThree() {
-  allChoices.push(imageThree.alt);
+  allChoices.push(imageRight.alt);
 }
 
 function countViews() {
@@ -120,6 +120,6 @@ function render() {
 randomProduct();
 
 photoFrame.addEventListener('click', randomProduct);
-imageOne.addEventListener('click', countClicksOne);
-imageTwo.addEventListener('click', countClicksTwo);
-imageThree.addEventListener('click', countClicksThree);
+imageLeft.addEventListener('click', countClicksOne);
+imageCenter.addEventListener('click', countClicksTwo);
+imageRight.addEventListener('click', countClicksThree);
