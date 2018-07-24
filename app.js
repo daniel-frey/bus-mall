@@ -84,52 +84,75 @@ function countClicksThree() {
   displayedImages[2].clicks += 1;
 }
 
-function render() {
-  var titles = []; 
-  var votes = []; 
-  for (var a = 0; a < allProducts.length; a++) { 
-  console.log(allProducts[a].name);
-  titles.push(allProducts[a].name); 
-  votes.push(allProducts[a].clicks); 
+function getRandomColorHex() {
+  var hex = "0123456789ABCDEF",
+      color = "#";
+  for (var i = 1; i <= 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
   }
-var ctx = document.getElementById("myChart").getContext('2d');
+  return color;
+}
+
+function render() {
+  var titles = [];
+  var votes = [];
+  for (var a = 0; a < allProducts.length; a++) {
+    console.log(allProducts[a].name);
+    titles.push(allProducts[a].name);
+    votes.push(allProducts[a].clicks);
+  }
+  var ctx = document.getElementById("myChart").getContext('2d');
   new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: titles,
-        datasets: [{
-            label: '# of Votes',
-            data: votes,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
+      labels: titles,
+      datasets: [{
+        label: '# of Votes',
+        data: votes,
+        backgroundColor: [
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+        ],
+        borderColor: [
+        ],
+        borderWidth: 1
+      }]
     },
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true,
-                    autoSkip: false
-                }
-            }]
-        }
+      responsive: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            autoSkip: false
+          }
+        }]
+      }
     }
-});}
+  });
+}
 
 randomProduct();
 
