@@ -74,14 +74,17 @@ function randomProduct() {
 
 function countClicksOne() {
   displayedImages[0].clicks += 1;
+  localStorage.setItem('productStorage', JSON.stringify(allProducts));
 }
 
 function countClicksTwo() {
   displayedImages[1].clicks += 1;
+  localStorage.setItem('productStorage', JSON.stringify(allProducts));
 }
 
 function countClicksThree() {
   displayedImages[2].clicks += 1;
+  localStorage.setItem('productStorage', JSON.stringify(allProducts));
 }
 
 function getRandomColorHex() {
@@ -153,7 +156,12 @@ function render() {
     }
   });
 }
-
+if (localStorage.getItem('productStorage', JSON.stringify(allProducts)) === null) {
+  randomProduct();
+} else {
+  var productsRetrieved = localStorage.getItem('productStorage', JSON.stringify(allProducts));
+  allProducts = JSON.parse(productsRetrieved);
+}
 randomProduct();
 
 photoFrame.addEventListener('click', randomProduct);
