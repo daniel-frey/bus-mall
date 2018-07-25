@@ -1,5 +1,5 @@
 var allProducts = [];
-var choicesLeft = 25;
+var choicesLeft = 26;
 var imageLeft = document.getElementById('left');
 var imageCenter = document.getElementById('center');
 var imageRight = document.getElementById('right');
