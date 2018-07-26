@@ -12,7 +12,6 @@ var productClickTotals = [];
 var allChoices = [];
 var displayedImages = [];
 
-
 function Merchandise(name, filepath) {
   this.name = name;
   this.filepath = filepath;
@@ -74,17 +73,17 @@ function randomProduct() {
 
 function countClicksOne() {
   displayedImages[0].clicks += 1;
-  localStorage.setItem('productStorage', JSON.stringify(allProducts));
+  localStorage.setItem('merchandiseStorage', JSON.stringify(allProducts));
 }
 
 function countClicksTwo() {
   displayedImages[1].clicks += 1;
-  localStorage.setItem('productStorage', JSON.stringify(allProducts));
+  localStorage.setItem('merchandiseStorage', JSON.stringify(allProducts));
 }
 
 function countClicksThree() {
   displayedImages[2].clicks += 1;
-  localStorage.setItem('productStorage', JSON.stringify(allProducts));
+  localStorage.setItem('merchandiseStorage', JSON.stringify(allProducts));
 }
 
 function getRandomColorHex() {
@@ -156,11 +155,11 @@ function render() {
     }
   });
 }
-if (localStorage.getItem('productStorage', JSON.stringify(allProducts)) === null) {
+if (localStorage.getItem('merchandiseStorage', JSON.stringify(allProducts)) === null) {
   randomProduct();
 } else {
-  var productsRetrieved = localStorage.getItem('productStorage', JSON.stringify(allProducts));
-  allProducts = JSON.parse(productsRetrieved);
+  var merchandiseRetrieved = localStorage.getItem('merchandiseStorage', JSON.stringify(allProducts));
+  allProducts = JSON.parse(merchandiseRetrieved);
 }
 randomProduct();
 
