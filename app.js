@@ -1,3 +1,5 @@
+'use strict'
+
 var allProducts = [];
 var choicesLeft = 26;
 var imageLeft = document.getElementById('left');
