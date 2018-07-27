@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var allProducts = [];
 var choicesLeft = 26;
@@ -9,9 +9,6 @@ var photoFrame = document.getElementById('photo-frame');
 var images = [imageLeft, imageCenter, imageRight];
 var lastSixPics = [];
 var allUsedPics = [];
-var productViewTotals = [];
-var productClickTotals = [];
-var allChoices = [];
 var displayedImages = [];
 
 function Merchandise(name, filepath) {
@@ -89,8 +86,8 @@ function countClicksThree() {
 }
 
 function getRandomColorHex() {
-  var hex = "0123456789ABCDEF",
-      color = "#";
+  var hex = '0123456789ABCDEF',
+    color = '#';
   for (var i = 1; i <= 6; i++) {
     color += hex[Math.floor(Math.random() * 16)];
   }
@@ -105,7 +102,7 @@ function render() {
     titles.push(allProducts[a].name);
     votes.push(allProducts[a].clicks);
   }
-  var ctx = document.getElementById("myChart").getContext('2d');
+  var ctx = document.getElementById('myChart').getContext('2d');
   new Chart(ctx, {
     type: 'bar',
     data: {
